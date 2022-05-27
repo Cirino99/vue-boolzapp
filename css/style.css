@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 
+/* main */
 main {
     position: relative;
 }
@@ -17,6 +18,7 @@ main #sfondo-down {
     height: 85vh;
     background-color: #dbdbd4;
 }
+/* app */
 main #app {
     position: absolute;
     top: 50%;
@@ -28,19 +30,24 @@ main #app {
 main #app #main-container {
     min-width: 100%;
 }
+/* contatti */
 main #app #contatti {
     width: 100%;
     height: 95vh;
-    background-color: #ffffff;
     display: flex;
     flex-direction: column;
     border-right: .5px solid #b1b1b1;
+    /* debug */
+    background-color: #ffffff;
 }
+/* chat */
 main #app #chat {
     width: 100%;
     height: 95vh;
+    /* debug */
     background-color: #ffffff;
 }
+/* profilo */
 main #app .profilo {
     display: flex;
     align-items: center;
@@ -68,6 +75,7 @@ main #app .opzione-profilo i {
     font-size: 25px;
     color: #b1b1b1;
 }
+/* notifiche */
 main #app #contatti #ricevi-notifiche {
     padding: 15px;
     display: flex;
@@ -95,4 +103,18 @@ main #app #contatti #ricevi-notifiche #testo-ricevi-notifica span {
     text-decoration: underline;
     color: #6d7983;
     font-size: 14px;
+}
+/* ricerca contatto */
+main #app #contatti #ricerca-contatto {
+    padding: 5px;
+    background-color: #fafafa;
+}
+main #app #contatti #ricerca-contatto .input-group-text {
+    background-color: white;
+    width: 50px;
+    justify-content: center;
+}
+main #app #contatti #ricerca-contatto .input-group-text i {
+    color: #b1b1b1;
+    font-size: 16px;
 }
