@@ -3,6 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+body {
+    font-family: 'Lato', sans-serif;
+}
 
 /* main */
 main {
@@ -36,7 +39,7 @@ main #app #contatti {
     height: 95vh;
     display: flex;
     flex-direction: column;
-    border-right: .5px solid #b1b1b1;
+    border-right: 1px solid #d6d6d6;
     /* debug */
     background-color: #ffffff;
 }
@@ -99,7 +102,7 @@ main #app #contatti #ricevi-notifiche #icona-ricevi-notifica i {
 main #app #contatti #ricevi-notifiche #testo-ricevi-notifica p {
     margin: 0;
 }
-main #app #contatti #ricevi-notifiche #testo-ricevi-notifica span {
+main #app #contatti #ricevi-notifiche #testo-ricevi-notifica p span {
     text-decoration: underline;
     color: #6d7983;
     font-size: 14px;
@@ -117,4 +120,30 @@ main #app #contatti #ricerca-contatto .input-group-text {
 main #app #contatti #ricerca-contatto .input-group-text i {
     color: #b1b1b1;
     font-size: 16px;
+}
+/* lista chat */
+main #app #contatti #lista-chat {
+    overflow: auto;
+}
+main #app #contatti #lista-chat .preview-chat {
+    display: flex;
+    align-items: flex-start;
+    padding: 10px 20px;
+    border-top: 1px solid #f5f5f5;
+}
+main #app #contatti #lista-chat .preview-chat .img-utente {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+main #app #contatti #lista-chat .preview-chat .nome-chat {
+    width: 100%;
+}
+main #app #contatti #lista-chat .preview-chat p {
+    margin: 0;
+}
+main #app #contatti #lista-chat .preview-chat span {
+    color: #b6b9bb;
+    font-size: 14px;
 }
