@@ -30,7 +30,7 @@
                             <div class="profilo">
                                 <div class="utente">
                                     <img class="img-utente" src="img/img-utente.jpg" alt="">
-                                    <span>Utente</span>
+                                    <span>Simone</span>
                                 </div>
                                 <div class="opzione-profilo">
                                     <i class="fas fa-circle-notch"></i>
@@ -101,7 +101,7 @@
                             <div id="corpo-chat">
                                 <div v-for="(messaggio,i) in chat.messages" :class="messaggio.status === 'sent' ? 'messaggio-inviato' : 'messaggio-ricevuto'" :key="i">
                                     <p>{{messaggio.message}}</p>
-                                    <span>15:30</span>
+                                    <span>{{messaggio.date}}</span>
                                 </div>  
                             </div>
                             <!-- input nuovo messaggio -->

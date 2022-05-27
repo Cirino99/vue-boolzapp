@@ -173,5 +173,3 @@ const app = new Vue({
         }
     }
 });
-
-
