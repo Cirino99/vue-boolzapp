@@ -60,43 +60,13 @@
                             </div>
                             <!-- lista chat -->
                             <div id="lista-chat">
-                                <div class="preview-chat">
+                                <div class="preview-chat" v-for="(chat,index) in contacts" :key="index">
                                     <div class="utente">
-                                        <img class="img-utente" src="img/img-utente.jpg" alt="">
+                                        <img class="img-utente" :src="chat.avatar" alt="">
                                     </div>
                                     <div class="nome-chat">
                                         <p>
-                                            Utente
-                                            <br>
-                                            <span>Ultimo messaggio inviato</span>
-                                        </p>
-                                    </div>
-                                    <div class="ultimo-accesso">
-                                        <span>12:00</span>
-                                    </div>
-                                </div>
-                                <div class="preview-chat">
-                                    <div class="utente">
-                                        <img class="img-utente" src="img/img-utente.jpg" alt="">
-                                    </div>
-                                    <div class="nome-chat">
-                                        <p>
-                                            Utente
-                                            <br>
-                                            <span>Ultimo messaggio inviato</span>
-                                        </p>
-                                    </div>
-                                    <div class="ultimo-accesso">
-                                        <span>12:00</span>
-                                    </div>
-                                </div>
-                                <div class="preview-chat">
-                                    <div class="utente">
-                                        <img class="img-utente" src="img/img-utente.jpg" alt="">
-                                    </div>
-                                    <div class="nome-chat">
-                                        <p>
-                                            Utente
+                                            {{chat.name}}
                                             <br>
                                             <span>Ultimo messaggio inviato</span>
                                         </p>
@@ -143,7 +113,6 @@
                                 <div class="more-input">
                                     <i class="far fa-smile"></i>
                                 </div>
-                                
                                 <input class="form-control" id="nuovo-messaggio" type="text" placeholder="Scrivi un nuovo messaggio">
                                 <div class="more-input">
                                     <i class="fas fa-microphone"></i>
