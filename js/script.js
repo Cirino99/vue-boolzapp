@@ -164,7 +164,13 @@ const app = new Vue({
                 ],
             }
         ],
-        newMessage : ''
+        newMessage : '',
+        chatActive : 0
+    },
+    methods : {
+        selectChat(i){
+            this.chatActive = i;
+        }
     }
 });
 

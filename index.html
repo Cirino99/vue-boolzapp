@@ -60,7 +60,7 @@
                             </div>
                             <!-- lista chat -->
                             <div id="lista-chat">
-                                <div class="preview-chat" v-for="(chat,index) in contacts" :key="index">
+                                <div class="preview-chat" :class="chatActive === index ? 'active' : ''" v-for="(chat,index) in contacts" :key="index" @click="selectChat(index)">
                                     <div class="utente">
                                         <img class="img-utente" :src="chat.avatar" alt="">
                                     </div>
@@ -80,13 +80,13 @@
                     </div>
                     <div class="col-8 p-0">
                         <!-- chat -->
-                        <div id="chat">
+                        <div id="chat" v-for="(chat,index) in contacts" v-if="index === chatActive" :key="index">
                             <!-- titolo chat -->
                             <div class="profilo" id="titolo-chat">
                                 <div class="utente">
-                                    <img class="img-utente" src="img/img-utente.jpg" alt="">
+                                    <img class="img-utente" :src="chat.avatar" alt="">
                                     <p>
-                                        Utente
+                                        {{chat.name}}
                                         <br>
                                         <span>Ultimo accesso oggi alle 12:00</span>
                                     </p>
@@ -99,14 +99,10 @@
                             </div>
                             <!-- corpo chat -->
                             <div id="corpo-chat">
-                                <div class="messaggio-inviato">
-                                    <p>Testo messaggio</p>
+                                <div v-for="(messaggio,i) in chat.messages" :class="messaggio.status === 'sent' ? 'messaggio-inviato' : 'messaggio-ricevuto'" :key="i">
+                                    <p>{{messaggio.message}}</p>
                                     <span>15:30</span>
-                                </div>
-                                <div class="messaggio-ricevuto">
-                                    <p>Testo messaggio</p>
-                                    <span>15:30</span>
-                                </div>
+                                </div>  
                             </div>
                             <!-- input nuovo messaggio -->
                             <div id="input-chat">
