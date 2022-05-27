@@ -165,11 +165,14 @@ const app = new Vue({
             }
         ],
         newMessage : '',
-        chatActive : 0
+        chatActive : 0,
+        contact : ''
     },
     methods : {
         selectChat(i){
             this.chatActive = i;
+            this.contact = '';
+            this.ricaricaContact();
         },
         addNewMessage(){
             this.newMessage = this.newMessage.trim();
@@ -191,6 +194,22 @@ const app = new Vue({
                 status : 'received'
             };
             this.contacts[this.chatActive].messages.push(message);
+        },
+        searchContact(){
+            this.ricaricaContact();
+            let contact = this.contact.trim();
+            if(contact !== ''){
+                for(let i=0; i<this.contacts.length; i++){
+                    if(this.contacts[i].name.toLowerCase().search(contact.toLowerCase()) === -1){
+                        this.contacts[i].visible = false;
+                    }
+                }
+            }
+        },
+        ricaricaContact(){
+            for(let i=0; i<this.contacts.length; i++){
+                this.contacts[i].visible = true;
+            }
         }
     }
 });

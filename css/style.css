@@ -31,7 +31,7 @@ main #app {
     left: 50%;
     transform: translate(-50%,-50%);
     width: 80%;
-    min-width: 1100px;
+    min-width: 900px;
 }
 main #app #main-container {
     min-width: 100%;

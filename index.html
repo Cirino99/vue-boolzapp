@@ -54,13 +54,13 @@
                             <!-- ricerca contatto -->
                             <div id="ricerca-contatto">
                                 <div class="input-group input-group-sm">
-                                    <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fas fa-search"></i></span>
-                                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Cerca o inizia una nuova chat">
+                                    <span class="input-group-text" id="inputGroup-sizing-sm" @click="searchContact()"><i class="fas fa-search"></i></span>
+                                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Cerca o inizia una nuova chat" v-model="contact" @keyup="searchContact()">
                                 </div>
                             </div>
                             <!-- lista chat -->
                             <div id="lista-chat">
-                                <div class="preview-chat" :class="chatActive === index ? 'active' : ''" v-for="(chat,index) in contacts" :key="index" @click="selectChat(index)">
+                                <div class="preview-chat" :class="chatActive === index ? 'active' : ''" v-for="(chat,index) in contacts" :key="index" @click="selectChat(index)" v-if="chat.visible === true">
                                     <div class="utente">
                                         <img class="img-utente" :src="chat.avatar" alt="">
                                     </div>
@@ -113,7 +113,6 @@
                                 <div class="more-input">
                                     <i class="fas fa-microphone"></i>
                                 </div>
-                                
                             </div>
                         </div>
                     </div>
