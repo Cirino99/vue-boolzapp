@@ -170,6 +170,27 @@ const app = new Vue({
     methods : {
         selectChat(i){
             this.chatActive = i;
+        },
+        addNewMessage(){
+            this.newMessage = this.newMessage.trim();
+            if(this.newMessage !== ''){
+                const message = {
+                    date : 'data',
+                    message : this.newMessage,
+                    status : 'sent'
+                };
+                this.contacts[this.chatActive].messages.push(message);
+                this.newMessage = '';
+                setTimeout(this.replyMessage,1000);
+            }
+        },
+        replyMessage(){
+            const message = {
+                date : 'data',
+                message : 'ok',
+                status : 'received'
+            };
+            this.contacts[this.chatActive].messages.push(message);
         }
     }
 });
