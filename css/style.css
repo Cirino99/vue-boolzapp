@@ -34,6 +34,7 @@ main #app #contatti {
     background-color: #ffffff;
     display: flex;
     flex-direction: column;
+    border-right: .5px solid #b1b1b1;
 }
 main #app #chat {
     width: 100%;
@@ -54,6 +55,8 @@ main #app .utente {
 main #app .img-utente {
     width: 50px;
     height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 main #app .opzione-profilo {
     display: flex;
@@ -64,4 +67,32 @@ main #app .opzione-profilo {
 main #app .opzione-profilo i {
     font-size: 25px;
     color: #b1b1b1;
+}
+main #app #contatti #ricevi-notifiche {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    background-color: #8edafc;
+}
+main #app #contatti #ricevi-notifiche #icona-ricevi-notifica {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #f2fbff;
+    margin-right: 10px;
+}
+main #app #contatti #ricevi-notifiche #icona-ricevi-notifica i {
+    font-size: 20px;
+    color: #8edafc;
+}
+main #app #contatti #ricevi-notifiche #testo-ricevi-notifica p {
+    margin: 0;
+}
+main #app #contatti #ricevi-notifiche #testo-ricevi-notifica span {
+    text-decoration: underline;
+    color: #6d7983;
+    font-size: 14px;
 }
