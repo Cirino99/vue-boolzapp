@@ -187,3 +187,24 @@ main #app #chat #corpo-chat span {
     font-size: 11px;
     color: #b6b9bb;
 }
+/* input chat */
+main #app #chat #input-chat {
+    padding: 10px;
+    background-color: #f3eeea;
+    display: flex;
+    align-items: center;
+}
+main #app #chat #input-chat .more-input {
+    display: flex;
+    align-items: center;
+    margin: 0 30px;
+}
+main #app #chat #input-chat .more-input i {
+    font-size: 20px;
+    color: #6b7376;
+}
+main #app #chat #input-chat #nuovo-messaggio {
+    height: 50px;
+    width: 100%;
+    border-color: #ffffff;
+}
