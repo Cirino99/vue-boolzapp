@@ -80,13 +80,13 @@
                     </div>
                     <div class="col-8 p-0">
                         <!-- chat -->
-                        <div id="chat" v-for="(chat,index) in contacts" v-if="index === chatActive" :key="index">
+                        <div id="chat">
                             <!-- titolo chat -->
                             <div class="profilo" id="titolo-chat">
                                 <div class="utente">
-                                    <img class="img-utente" :src="chat.avatar" alt="">
+                                    <img class="img-utente" :src="contacts[chatActive].avatar" alt="">
                                     <p>
-                                        {{chat.name}}
+                                        {{contacts[chatActive].name}}
                                         <br>
                                         <span>Ultimo accesso oggi alle 12:00</span>
                                     </p>
@@ -99,12 +99,12 @@
                             </div>
                             <!-- corpo chat -->
                             <div id="corpo-chat">
-                                <div v-for="(messaggio,i) in chat.messages" :class="messaggio.status === 'sent' ? 'messaggio-inviato' : 'messaggio-ricevuto'" :key="i" @click="selectMessage(index,i)">
+                                <div v-for="(messaggio,i) in contacts[chatActive].messages" :class="messaggio.status === 'sent' ? 'messaggio-inviato' : 'messaggio-ricevuto'" :key="i" @click="selectMessage(i)">
                                     <p>{{messaggio.message}}</p>
                                     <span>{{messaggio.date}}</span>
-                                    <div class="elimina-messaggio" :class="messaggio.select === true ? 'select' : ''" @mouseleave="unSelectMessage(index,i)">
+                                    <div class="elimina-messaggio" :class="messaggio.select === true ? 'select' : ''" @mouseleave="unSelectMessage(i)">
                                         <span class="elimina-text">Message Info</span>
-                                        <span class="elimina-text" @click="deleteMessage(index,i)">Delete Message</span>
+                                        <span class="elimina-text" @click="deleteMessage(i)">Delete Message</span>
                                     </div>
                                 </div>  
                             </div>

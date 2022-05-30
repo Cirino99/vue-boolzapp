@@ -234,15 +234,17 @@ const app = new Vue({
                 this.contacts[i].visible = true;
             }
         },
-        selectMessage(i,j){
-            this.contacts[i].messages[j].select = true;
+        selectMessage(i){
+            console.log(i);
+            this.contacts[this.chatActive].messages[i].select = true;
         },
-        unSelectMessage(i,j){
-            this.contacts[i].messages[j].select = false;
+        unSelectMessage(i){
+            this.contacts[this.chatActive].messages[i].select = false;
         },
-        deleteMessage(i,j){
-            this.contacts[i].messages[j].select = false;
-            this.contacts[i].messages.splice(j,1);
+        deleteMessage(i){
+            console.log(i);
+            this.contacts[this.chatActive].messages[i].select = false;
+            this.contacts[this.chatActive].messages.splice(i,1);
         }
     }
 });
