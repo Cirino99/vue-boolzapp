@@ -187,7 +187,8 @@ const app = new Vue({
         ],
         newMessage : '',
         chatActive : 0,
-        contact : ''
+        contact : '',
+        messageMenu : ''
     },
     methods : {
         selectChat(i){
@@ -235,16 +236,18 @@ const app = new Vue({
             }
         },
         selectMessage(i){
-            this.contacts[this.chatActive].messages.forEach(element => {
-                if(this.contacts[this.chatActive].messages[i] !== element)
-                    element.select = false;
+            this.messageMenu = i;
+             this.contacts[this.chatActive].messages.forEach(element => {
+                 if(this.contacts[this.chatActive].messages[i] !== element)
+                  element.select = false;
             });
             this.contacts[this.chatActive].messages[i].select = !this.contacts[this.chatActive].messages[i].select;
         },
-        deleteMessage(i){
-            this.contacts[this.chatActive].messages[i].select = false;
-            console.log(this.contacts[this.chatActive].messages[i].select);
-            // this.contacts[this.chatActive].messages.splice(i,1);
+        deleteMessage(e){
+            e.preventDefault();
+            e.stopPropagation();
+            this.contacts[this.chatActive].messages[this.messageMenu].select = false;
+            this.contacts[this.chatActive].messages.splice(this.messageMenu,1);
         }
     }
 });

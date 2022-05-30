@@ -102,9 +102,9 @@
                                 <div v-for="(messaggio,i) in contacts[chatActive].messages" :class="messaggio.status === 'sent' ? 'messaggio-inviato' : 'messaggio-ricevuto'" :key="i" @click="selectMessage(i)">
                                     <p>{{messaggio.message}}</p>
                                     <span>{{messaggio.date}}</span>
-                                    <div class="elimina-messaggio" :class="messaggio.select === true ? 'select' : 'unselect'">
+                                    <div class="elimina-messaggio" :class="messaggio.select === true ? 'select' : ''" :key="i">
                                         <span class="elimina-text">Message Info</span>
-                                        <span class="elimina-text" @click="deleteMessage(i)">Delete Message</span>
+                                        <span class="elimina-text" @click="deleteMessage">Delete Message</span>
                                     </div>
                                 </div>  
                             </div>

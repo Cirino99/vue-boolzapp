@@ -206,6 +206,7 @@ main #app #chat #corpo-chat .elimina-messaggio {
     align-items: flex-start;
     border-radius: 5px;
     box-shadow: .5px .5px 5px black;
+    display: none;
 }
 main #app #chat #corpo-chat .elimina-messaggio .elimina-text {
     font-size: 14px;
@@ -215,9 +216,6 @@ main #app #chat #corpo-chat .elimina-messaggio .elimina-text {
 }
 main #app #chat #corpo-chat .select {
     display: flex;
-}
-main #app #chat #corpo-chat .unselect {
-    display: none;
 }
 main #app #chat #corpo-chat span {
     align-self: flex-end;
