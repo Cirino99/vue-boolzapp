@@ -178,7 +178,7 @@ const app = new Vue({
             this.newMessage = this.newMessage.trim();
             if(this.newMessage !== ''){
                 const message = {
-                    date : 'data',
+                    date : dayjs().format('DD/MM/YYYY HH-mm-ss'),
                     message : this.newMessage,
                     status : 'sent'
                 };
@@ -189,7 +189,7 @@ const app = new Vue({
         },
         replyMessage(){
             const message = {
-                date : 'data',
+                date : dayjs().format('DD/MM/YYYY HH-mm-ss'),
                 message : 'ok',
                 status : 'received'
             };
