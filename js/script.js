@@ -236,10 +236,11 @@ const app = new Vue({
         },
         selectMessage(i){
             console.log(i);
-            this.contacts[this.chatActive].messages[i].select = true;
-        },
-        unSelectMessage(i){
-            this.contacts[this.chatActive].messages[i].select = false;
+            this.contacts[this.chatActive].messages.forEach(element => {
+                if(this.contacts[this.chatActive].messages[i] !== element)
+                    element.select = false;
+            });
+            this.contacts[this.chatActive].messages[i].select = !this.contacts[this.chatActive].messages[i].select;
         },
         deleteMessage(i){
             console.log(i);

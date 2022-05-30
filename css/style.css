@@ -205,6 +205,8 @@ main #app #chat #corpo-chat .elimina-messaggio {
     flex-direction: column;
     justify-content: space-around;
     align-items: flex-start;
+    border-radius: 5px;
+    box-shadow: .5px .5px 5px black;
 }
 main #app #chat #corpo-chat .elimina-messaggio .elimina-text {
     font-size: 14px;
