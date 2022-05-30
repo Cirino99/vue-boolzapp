@@ -235,7 +235,6 @@ const app = new Vue({
             }
         },
         selectMessage(i){
-            console.log(i);
             this.contacts[this.chatActive].messages.forEach(element => {
                 if(this.contacts[this.chatActive].messages[i] !== element)
                     element.select = false;
@@ -243,9 +242,9 @@ const app = new Vue({
             this.contacts[this.chatActive].messages[i].select = !this.contacts[this.chatActive].messages[i].select;
         },
         deleteMessage(i){
-            console.log(i);
             this.contacts[this.chatActive].messages[i].select = false;
-            this.contacts[this.chatActive].messages.splice(i,1);
+            console.log(this.contacts[this.chatActive].messages[i].select);
+            // this.contacts[this.chatActive].messages.splice(i,1);
         }
     }
 });
