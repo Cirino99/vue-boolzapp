@@ -181,6 +181,7 @@ main #app #chat #corpo-chat .messaggio-inviato {
     width: 36%;
     background-color: #d5f9ba;
     border-radius: 10px;
+    position: relative;
 }
 main #app #chat #corpo-chat .messaggio-ricevuto {
     align-self: flex-start;
@@ -190,6 +191,29 @@ main #app #chat #corpo-chat .messaggio-ricevuto {
     width: 36%;
     background-color: #ffffff;
     border-radius: 10px;
+    position: relative;
+}
+main #app #chat #corpo-chat .elimina-messaggio {
+    position: absolute;
+    padding: 5px 15px;
+    background-color: #ffffff;
+    bottom: -65px;
+    right: 5px;
+    display: none;
+    z-index: 10;
+    height: 80px;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+main #app #chat #corpo-chat .elimina-messaggio .elimina-text {
+    font-size: 14px;
+    color: black;
+    display: block;
+    align-self: flex-start;
+}
+main #app #chat #corpo-chat .select {
+    display: flex;
 }
 main #app #chat #corpo-chat span {
     align-self: flex-end;
