@@ -232,7 +232,8 @@ main #app #chat #input-chat {
 main #app #chat #input-chat .more-input {
     display: flex;
     align-items: center;
-    margin: 0 30px;
+    margin: 0 25px;
+    width: 25px;
 }
 main #app #chat #input-chat .more-input i {
     font-size: 20px;
