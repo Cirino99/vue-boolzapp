@@ -6,6 +6,7 @@ const app = new Vue({
                 name: 'Michele',
                 avatar: 'img/img-utente.jpg',
                 visible: true,
+                ultimoAccesso: '',
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
@@ -31,6 +32,7 @@ const app = new Vue({
                 name: 'Fabio',
                 avatar: 'img/img-utente.jpg',
                 visible: true,
+                ultimoAccesso: '',
                 messages: [
                     {
                         date: '20/03/2020 16:30:00',
@@ -56,6 +58,7 @@ const app = new Vue({
                 name: 'Samuele',
                 avatar: 'img/img-utente.jpg',
                 visible: true,
+                ultimoAccesso: '',
                 messages: [
                     {
                         date: '28/03/2020 10:10:40',
@@ -81,6 +84,7 @@ const app = new Vue({
                 name: 'Alessandro B.',
                 avatar: 'img/img-utente.jpg',
                 visible: true,
+                ultimoAccesso: '',
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
@@ -100,6 +104,7 @@ const app = new Vue({
                 name: 'Alessandro L.',
                 avatar: 'img/img-utente.jpg',
                 visible: true,
+                ultimoAccesso: '',
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
@@ -119,6 +124,7 @@ const app = new Vue({
                 name: 'Claudia',
                 avatar: 'img/img-utente.jpg',
                 visible: true,
+                ultimoAccesso: '',
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
@@ -144,6 +150,7 @@ const app = new Vue({
                 name: 'Federico',
                 avatar: 'img/img-utente.jpg',
                 visible: true,
+                ultimoAccesso: '',
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
@@ -163,6 +170,7 @@ const app = new Vue({
                 name: 'Davide',
                 avatar: 'img/img-utente.jpg',
                 visible: true,
+                ultimoAccesso: '',
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
@@ -189,6 +197,11 @@ const app = new Vue({
         chatActive : 0,
         contact : '',
         messageMenu : ''
+    },
+    created : function(){
+        for(let i=0; i<this.contacts.length; i++){
+            this.setUltimoAccesso(i);
+        }
     },
     methods : {
         selectChat(i){
@@ -218,6 +231,7 @@ const app = new Vue({
                 select: false
             };
             this.contacts[this.chatActive].messages.push(message);
+            this.setUltimoAccesso(this.chatActive);
         },
         searchContact(){
             this.ricaricaContact();
@@ -237,9 +251,9 @@ const app = new Vue({
         },
         selectMessage(i){
             this.messageMenu = i;
-             this.contacts[this.chatActive].messages.forEach(element => {
-                 if(this.contacts[this.chatActive].messages[i] !== element)
-                  element.select = false;
+            this.contacts[this.chatActive].messages.forEach(element => {
+                if(this.contacts[this.chatActive].messages[i] !== element)
+                    element.select = false;
             });
             this.contacts[this.chatActive].messages[i].select = !this.contacts[this.chatActive].messages[i].select;
         },
@@ -248,6 +262,15 @@ const app = new Vue({
             e.stopPropagation();
             this.contacts[this.chatActive].messages[this.messageMenu].select = false;
             this.contacts[this.chatActive].messages.splice(this.messageMenu,1);
+        },
+        setUltimoAccesso(index){
+            for(let i=this.contacts[index].messages.length - 1; i>=0; i--){
+                if(this.contacts[index].messages[i].status === 'received'){
+                    //this.contacts[index].ultimoAccesso = dayjs(this.contacts[index].messages[i].date).format('HH:mm');
+                    this.contacts[index].ultimoAccesso = this.contacts[index].messages[i].date;
+                    return;
+                }
+            }
         }
     }
 });

@@ -68,11 +68,11 @@
                                         <p>
                                             {{chat.name}}
                                             <br>
-                                            <span>Ultimo messaggio inviato {{chat.messages[chat.messages.length - 1].date}}</span>
+                                            <span>{{chat.messages[chat.messages.length - 1].message}} </span>
                                         </p>
                                     </div>
                                     <div class="ultimo-accesso">
-                                        <span>12:00</span>
+                                        <span>{{chat.messages[chat.messages.length - 1].date}}</span>
                                     </div>
                                 </div>
                             </div>
@@ -88,7 +88,7 @@
                                     <p>
                                         {{contacts[chatActive].name}}
                                         <br>
-                                        <span>Ultimo accesso {{contacts[chatActive].messages[contacts[chatActive].messages.length - 1].date}}</span>
+                                        <span>Ultimo accesso {{contacts[chatActive].ultimoAccesso}}</span>
                                     </p>
                                 </div>
                                 <div class="opzione-profilo">
