@@ -220,6 +220,7 @@ const app = new Vue({
                 };
                 this.contacts[this.chatActive].messages.push(message);
                 this.newMessage = '';
+                this.contacts[this.chatActive].ultimoAccesso = 'Sta scrivendo...';
                 setTimeout(this.replyMessage,1000);
             }
         },
@@ -231,7 +232,8 @@ const app = new Vue({
                 select: false
             };
             this.contacts[this.chatActive].messages.push(message);
-            this.setUltimoAccesso(this.chatActive);
+            this.contacts[this.chatActive].ultimoAccesso = 'Online';
+            setTimeout(this.setUltimoAccesso,2000);
         },
         searchContact(){
             this.ricaricaContact();
@@ -263,7 +265,7 @@ const app = new Vue({
             this.contacts[this.chatActive].messages[this.messageMenu].select = false;
             this.contacts[this.chatActive].messages.splice(this.messageMenu,1);
         },
-        setUltimoAccesso(index){
+        setUltimoAccesso(index=this.chatActive){
             for(let i=this.contacts[index].messages.length - 1; i>=0; i--){
                 if(this.contacts[index].messages[i].status === 'received'){
                     //this.contacts[index].ultimoAccesso = dayjs(this.contacts[index].messages[i].date).format('HH:mm');
